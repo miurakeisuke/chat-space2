@@ -1,0 +1,204 @@
+@import "./reset.scss";
+
+@import "./variable.scss";
+
+@import "./chatview.scss";
+
+.header {
+  background-color: $sb-color;
+  position: fixed;
+  width: 100vw;
+  height: 30px;
+  text-align: center;
+  .topic {
+    font-size: 20px;
+    color: $w-color;
+  }
+}
+
+.side {
+  padding-top: 30px;
+  width: 300px;
+  height: calc(100vh - 30px);
+  position: fixed;
+  .side__data {
+    width: 300px;
+    height: 100px;
+    background-color: #253141 ;
+    float: left;
+    .side__data__user {
+       font-size: 16px;
+       font-style: bold;
+       list-style: none;
+       color: $w-color;
+       padding: 35px 20px;
+       position: relative;
+       display: inline-block;
+    }
+    .fa-cogs {
+        @include icon();
+    }
+    .fa-edit {
+        @include icon();
+        margin-left: 70px;
+    }
+  }
+  .side__bottom {
+    height: calc(100vh - 100px);
+    width: 100% ;
+    background-color: #2f3e51;
+    float: left;
+    .side__bottom__info {
+      @include infostyle();
+    }
+    p.g_name {
+      @include g_namestyle();
+    }
+    .side__bottom__info {
+      @include infostyle();
+    }
+    p.g_name {
+      @include g_namestyle();
+    }
+    .side__bottom__info {
+      @include infostyle();
+    }
+    p.g_name {
+      @include g_namestyle();
+    }
+    .side__bottom__info {
+      @include infostyle();
+    }
+    p.g_name {
+      @include g_namestyle();
+    }
+  }
+}
+
+.chatbox {
+  padding-top: 30px ;
+  height: calc(100vh - 120px) ;
+  width: calc(100vw - 300px);
+  float: right;
+  background-color: $w-color ;
+  .chatbox__top {
+    width: 100%;
+    height: 100px;
+    border-bottom: solid 1px $b-color ;
+    float: right;
+    .namebox {
+      padding: 35px 0 0 40px;
+      width: 30%;
+      font-size: 20px;
+      color: $b-color ;
+      float: left;
+    }
+    a.edit.groups {
+     color: $sb-color;
+     font-size: 15px;
+     padding: 12.5px 20px;
+     margin: 28px 40px;
+     border: 1px solid $sb-color;
+     float: right;
+    }
+    p.memberbox {
+      font-size: 12px ;
+      padding-left: 40px;
+      margin-top: -35px;
+      color: $g-color ;
+      clear: both;
+      float: left;
+    }
+  }
+  .chatbox__main {
+    height: calc(100vh - 130px);
+    width: calc(100vw - 300px);
+    float: right;
+    .box1 {
+      height: 100px;
+      padding-top: 40px;
+      .tname {
+        @include namestyle();
+      }
+      .date {
+        @include datestyle();
+      }
+      p.tweet {
+        @include tweetstyle();
+      }
+    }
+    .box {
+      @include second-box();
+      .tname {
+        @include namestyle();
+      }
+      .date {
+        @include datestyle();
+      }
+      p.tweet {
+       @include tweetstyle();
+      }
+    }
+    .box {
+      @include second-box();
+      .tname {
+        @include namestyle();
+      }
+      .date {
+        @include datestyle();
+      }
+      p.tweet {
+       @include tweetstyle();
+      }
+    }
+    .box {
+      @include second-box();
+      .tname {
+        @include namestyle();
+      }
+      .date {
+        @include datestyle();
+      }
+      p.tweet {
+       @include tweetstyle();
+      }
+    }
+  }
+  .chatbox__footer {
+    height: 90px;
+    width: calc(100vw - 300px);
+    float: right;
+    background-color: gray;
+    position: relative;
+    .chatbox__footer__sendbox {
+      margin: 20px 40px 20px;
+      width: 75%;
+      text-align: left;
+      height: 50px;
+      background-color: $w-color;
+      line-height: 50px;
+    }
+    .fa-image {
+      font-family: FontAwesome ;
+      height: 20px;
+      width: 20px;
+      color: $b-color;
+      display: inline-block;
+      float: right;
+      margin: 20px 10px 20px 0;
+    }
+    .chatbox__footer__send {
+      background-color: #38AEF0;
+      font-size: 15px;
+      color: $w-color;
+      padding: 12.5px 20px;
+      margin: 20px 40px 20px;
+      border: solid 1px $sb-color;
+      float: right;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
