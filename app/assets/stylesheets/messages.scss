@@ -35,10 +35,10 @@
        position: relative;
        display: inline-block;
     }
-    a.fa-cogs {
+    .fa-cogs {
         @include icon();
     }
-    a.fa-edit {
+    .fa-edit {
         @include icon();
         margin-left: 70px;
     }
@@ -93,7 +93,7 @@
       color: $b-color ;
       float: left;
     }
-    a.edit.groups {
+    input.edit {
      color: $sb-color;
      font-size: 15px;
      padding: 12.5px 20px;
@@ -169,37 +169,51 @@
     width: calc(100vw - 300px);
     float: right;
     background-color: gray;
-    position: relative;
-    .chatbox__footer__sendb {
-      margin: 20px 40px 20px;
-      width: 75%;
+    position: absolute;
+    bottom: 0;
+    clear: both;
+    input.box {
+      margin: 60px 20px 40px 20px;
+      width: calc(100% - 200px);
       text-align: left;
       height: 50px;
       background-color: $w-color;
       line-height: 50px;
       float: left;
+      margin:20px 0 20px 40px;
+      position: relative;
+    }
+    label.chat-image {
+      height: 54px;
+      width: 40px;
+      margin: 20px 130px 20px 0;
       position: absolute;
-      left: 40;
-      top: 20;
-      bottom: 20;
+      top: 0;
+      right: 0;
+      background-color: $w-color;
+      i.fa.fa-image {
+        font-family: FontAwesome ;
+        height: 20px;
+        width: 20px;
+        color: $b-color;
+        display: inline-block;
+        float: right;
+        padding: 20px 10px 20px 0;
+        position: absolute;
+        right: 10;
+        top: 20;
+        bottom: 20;
+      }
     }
-    .fa-image {
-      font-family: FontAwesome ;
-      height: 20px;
-      width: 20px;
-      color: $b-color;
-      display: inline-block;
-      float: right;
-      margin: 20px 10px 20px 0;
-    }
-    a.send-btn {
+    input.send-button {
       background-color: #38AEF0;
+      height: 54px;
       font-size: 15px;
       color: $w-color;
       padding: 12.5px 20px;
       border: solid 1px $sb-color;
       float: right;
-      margin: 20px 40px 20px 20px;
+      margin: 20px 40px 20px 10px;
     }
   }
 }

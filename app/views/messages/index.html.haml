@@ -4,8 +4,10 @@
 .side
   .side__data
     .side__data__user samplename
-    %a.fa-edit{:href => ""}
-    %a.fa-cogs{:href => ""}
+    = link_to '' do
+      %i.fa-edit
+    = link_to '' do
+      %i.fa-cogs
 
   .side__bottom
     .side__bottom__info sample
@@ -22,7 +24,7 @@
 .chatbox
   .chatbox__top
     .namebox sample-name
-    %a.edit.groups{:href => ""}  edit
+    %input.edit{:type => "submit", :value => "edit"}
     %p.memberbox MEMBER:sample
 
   .chatbox__main
@@ -44,8 +46,8 @@
       %p.tweet sampled
 
   .chatbox__footer
-    .chatbox__footer__sendb
-      .chatbox__footer__sendbox__message
-        type a message
-        %a.fa.fa-image{:href => ""}
-    %a.send-btn{:href => ""} send
+    %input.box{:type => "text", :placeholder => "type a message"}
+    %label.chat-image
+      %i.fa.fa-image
+
+    %input.send-button{:type => "submit", :value => "send"}
