@@ -10,44 +10,44 @@
       %i.fa-cogs
 
   .side__bottom
-    .side__bottom__info sample
+    .side__bottom-info sample
     %p.g_name sample
-    .side__bottom__info sample
+    .side__bottom-info sample
     %p.g_name sample
-    .side__bottom__info sample
+    .side__bottom-info sample
     %p.g_name sample
-    .side__bottom__info sample
+    .side__bottom-info sample
     %p.g_name sample
 
 
 
-.chatbox
-  .chatbox__top
-    .namebox sample-name
+.chat
+  .chat-top
+    .chat-top__name sample-name
     %input.edit{:type => "submit", :value => "edit"}
-    %p.memberbox MEMBER:sample
+    %p.member MEMBER:sample
 
-  .chatbox__main
-    .box1
-      .tname  sample12
-      .date  2018/5/9
+  .chat-main
+    .chat-main__content
+      .chat-main__content__name  sample12
+      .chat-main__content__date  2018/5/9
       %p.tweet samplea
-    .box
-      .tname  sample15
-      .date  2018/5/9
+    .chat-main__content
+      .chat-main__content__name  sample15
+      .chat-main__content__date  2018/5/9
       %p.tweet sampleb
-    .box
-      .tname  sample15
-      .date  2018/5/9
+    .chat-main__content
+      .chat-main__content__name  sample15
+      .chat-main__content__date  2018/5/9
       %p.tweet samplec
-    .box
-      .tname  sample15
-      .date  2018/5/9
+    .chat-main__content
+      .chat-main__content__name  sample15
+      .chat-main__content__date  2018/5/9
       %p.tweet sampled
 
-  .chatbox__footer
+  .chat-footer
     %form.chatbox__footer-form
-      %input.box{:type => "text", :placeholder => "type a message"}
+      %input.text{:type => "text", :placeholder => "type a message"}
       %label.chat-image
         %i.fa.fa-image
       %input.send-button{:type => "submit", :value => "send"}
