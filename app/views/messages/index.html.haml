@@ -4,8 +4,8 @@
 .side
   .side__data
     .side__data__user samplename
-    .fa-edit
-    .fa-cogs
+    %a.fa-edit{:href => ""}
+    %a.fa-cogs{:href => ""}
 
   .side__bottom
     .side__bottom__info sample
@@ -22,7 +22,7 @@
 .chatbox
   .chatbox__top
     .namebox sample-name
-    %a.edit.groups  edit
+    %a.edit.groups{:href => ""}  edit
     %p.memberbox MEMBER:sample
 
   .chatbox__main
@@ -47,5 +47,5 @@
     .chatbox__footer__sendb
       .chatbox__footer__sendbox__message
         type a message
-        .fa.fa-image
-    .chatbox__footer__send send
+        %a.fa.fa-image{:href => ""}
+    %a.send-btn{:href => ""} send

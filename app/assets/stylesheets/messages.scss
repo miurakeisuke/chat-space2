@@ -35,10 +35,10 @@
        position: relative;
        display: inline-block;
     }
-    .fa-cogs {
+    a.fa-cogs {
         @include icon();
     }
-    .fa-edit {
+    a.fa-edit {
         @include icon();
         margin-left: 70px;
     }
@@ -177,6 +177,11 @@
       height: 50px;
       background-color: $w-color;
       line-height: 50px;
+      float: left;
+      position: absolute;
+      left: 40;
+      top: 20;
+      bottom: 20;
     }
     .fa-image {
       font-family: FontAwesome ;
@@ -187,17 +192,14 @@
       float: right;
       margin: 20px 10px 20px 0;
     }
-    .chatbox__footer__send {
+    a.send-btn {
       background-color: #38AEF0;
       font-size: 15px;
       color: $w-color;
       padding: 12.5px 20px;
-      margin: 20px 40px 20px;
       border: solid 1px $sb-color;
       float: right;
-      position: absolute;
-      right: 0;
-      bottom: 0;
+      margin: 20px 40px 20px 20px;
     }
   }
 }
