@@ -32,13 +32,15 @@
        padding: 35px 20px;
        position: relative;
        display: inline-block;
+       float: left;
+    }
+    .fa-edit {
+        margin: 17px 2px 0 50px;
+        @include icon();
+
     }
     .fa-cogs {
         @include icon();
-    }
-    .fa-edit {
-        @include icon();
-        margin-left: 70px;
     }
   }
   &__bottom {
