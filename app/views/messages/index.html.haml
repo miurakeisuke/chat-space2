@@ -10,14 +10,8 @@
       %i.fa-cogs
 
   .side__bottom
-    = render 'messages/side'
-    = render 'messages/side'
-    = render 'messages/side'
-    = render 'messages/side'
-
-
-
-
+    - 4.times do
+      = render partial: "side"
 .chat
   .chat-top
     .chat-top__name sample-name
@@ -25,10 +19,8 @@
     %p.member MEMBER:sample
 
   .chat-main
-    = render 'messages/tweet'
-    = render 'messages/tweet'
-    = render 'messages/tweet'
-    = render 'messages/tweet'
+    - 4.times do
+      = render partial: "tweet"
 
   .chat-footer
     %form.chatbox__footer-form
