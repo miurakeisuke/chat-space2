@@ -3,10 +3,13 @@
 
 .side
   .side__data
-    .side__data__user samplename
+    .side__data__user
+      = current_user.name
+    %li.list
     = link_to '' do
       %i.fa-edit
-    = link_to '' do
+    %li.list
+    = link_to edit_user_path(current_user) do
       %i.fa-cogs
 
   .side__bottom

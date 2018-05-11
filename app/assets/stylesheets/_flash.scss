@@ -1,0 +1,12 @@
+.flashmessage {
+  .notice {
+    color: $w-color;
+    text-align: center;
+    background-color: $sb-color;
+  }
+  .alert{
+    background-color: $alert_orange;
+    color: $w-color;
+    text-align: center;
+  }
+}
