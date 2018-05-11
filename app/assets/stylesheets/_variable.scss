@@ -4,6 +4,13 @@ $b-color : #333333;
 
 $sb-color :#38AEF0;
 
-$g-color :#999999
+$g-color :#999999;
+
+@mixin icon() {
+  font-family: FontAwesome ;
+  color: $w-color ;
+  position: relative;
+  display: inline-block;
+}
 
 

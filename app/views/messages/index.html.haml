@@ -4,48 +4,27 @@
 .side
   .side__data
     .side__data__user samplename
-    .fa-edit
-    .fa-cogs
+    = link_to '' do
+      %i.fa-edit
+    = link_to '' do
+      %i.fa-cogs
 
   .side__bottom
-    .side__bottom__info sample
-    %p.g_name sample
-    .side__bottom__info sample
-    %p.g_name sample
-    .side__bottom__info sample
-    %p.g_name sample
-    .side__bottom__info sample
-    %p.g_name sample
+    - 4.times do
+      = render partial: "side"
+.chat
+  .chat-top
+    .chat-top__name sample-name
+    %input.edit{:type => "submit", :value => "edit"}
+    %p.member MEMBER:sample
 
+  .chat-main
+    - 4.times do
+      = render partial: "tweet"
 
-
-.chatbox
-  .chatbox__top
-    .namebox sample-name
-    %a.edit.groups  edit
-    %p.memberbox MEMBER:sample
-
-  .chatbox__main
-    .box1
-      .tname  sample12
-      .date  2018/5/9
-      %p.tweet samplea
-    .box
-      .tname  sample15
-      .date  2018/5/9
-      %p.tweet sampleb
-    .box
-      .tname  sample15
-      .date  2018/5/9
-      %p.tweet samplec
-    .box
-      .tname  sample15
-      .date  2018/5/9
-      %p.tweet sampled
-
-  .chatbox__footer
-    .chatbox__footer__sendbox
-      .chatbox__footer__sendbox__message
-        type a message
-        .fa.fa-image
-    .chatbox__footer__send send
+  .chat-footer
+    %form.chatbox__footer-form
+      %input.text{:type => "text", :placeholder => "type a message"}
+      %label.chat-image
+        %i.fa.fa-image
+      %input.send-button{:type => "submit", :value => "send"}
