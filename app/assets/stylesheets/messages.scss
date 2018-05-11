@@ -2,8 +2,6 @@
 
 @import "./variable.scss";
 
-@import "./chatview.scss";
-
 .header {
   background-color: $sb-color;
   position: fixed;
@@ -49,10 +47,16 @@
     background-color: #2f3e51;
     float: left;
     &-info {
-      @include info-style();
+      padding: 20px 20px 5px 20px;
+      font-size: 15px;
+      line-height: 5px;
+      color: $w-color ;
     }
     .g_name {
-      @include g_name-style();
+      padding: 0 20px 0 20px;
+      font-size: 11px;
+      padding-bottom: 40px;
+      color: $w-color ;
     }
   }
 }
@@ -98,15 +102,25 @@
     float: right;
     padding-top:26px;
     &__content {
-       @include content-style();
+       height: 100px;
+       margin: 20px 0;
       &__name {
-        @include name-style();
+       font-size: 16px;
+       padding-left: 40px;
+       float: left;
       }
       &__date {
-        @include date-style();
+        padding-left: 10px;
+        font-size: 12px;
+        color: $g-color;
+        float: left;
       }
       .tweet {
-        @include tweet-style();
+        font-size: 14px;
+        margin-top: 10px;
+        float:left;
+        clear: both;
+        padding-left: 40px;
       }
     }
   }
