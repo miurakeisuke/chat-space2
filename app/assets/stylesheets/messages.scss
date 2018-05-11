@@ -34,8 +34,12 @@
        display: inline-block;
        float: left;
     }
+    .list {
+      clear: both;
+      float: left;
+    }
     .fa-edit {
-        margin: 17px 2px 0 50px;
+        margin: 43px 2px 0 70px;
         @include icon();
 
     }
