@@ -10,14 +10,11 @@
       %i.fa-cogs
 
   .side__bottom
-    .side__bottom-info sample
-    %p.g_name sample
-    .side__bottom-info sample
-    %p.g_name sample
-    .side__bottom-info sample
-    %p.g_name sample
-    .side__bottom-info sample
-    %p.g_name sample
+    = render 'messages/side'
+    = render 'messages/side'
+    = render 'messages/side'
+    = render 'messages/side'
+
 
 
 
@@ -28,22 +25,10 @@
     %p.member MEMBER:sample
 
   .chat-main
-    .chat-main__content
-      .chat-main__content__name  sample12
-      .chat-main__content__date  2018/5/9
-      %p.tweet samplea
-    .chat-main__content
-      .chat-main__content__name  sample15
-      .chat-main__content__date  2018/5/9
-      %p.tweet sampleb
-    .chat-main__content
-      .chat-main__content__name  sample15
-      .chat-main__content__date  2018/5/9
-      %p.tweet samplec
-    .chat-main__content
-      .chat-main__content__name  sample15
-      .chat-main__content__date  2018/5/9
-      %p.tweet sampled
+    = render 'messages/tweet'
+    = render 'messages/tweet'
+    = render 'messages/tweet'
+    = render 'messages/tweet'
 
   .chat-footer
     %form.chatbox__footer-form
