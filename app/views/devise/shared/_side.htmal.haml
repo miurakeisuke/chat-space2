@@ -1,0 +1,7 @@
+.side__bottom
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .bottom-info__name
+        = group.name
+      %p.gname
+        メッセージはまだありません。

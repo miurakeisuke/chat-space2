@@ -13,8 +13,14 @@
       %i.fa-cogs
 
   .side__bottom
-    - 4.times do
-      = render partial: "side"
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .side__bottom__group
+          %p.g_name
+            = group.name
+          .side__bottom__group-info
+            メッセージはまだありません。
+
 .chat
   .chat-top
     .chat-top__name sample-name
