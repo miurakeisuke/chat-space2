@@ -11,5 +11,4 @@ module GroupsHelper
 
  def update
  end
-
 end
