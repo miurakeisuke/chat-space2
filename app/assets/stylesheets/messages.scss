@@ -49,9 +49,10 @@
   }
   &__bottom {
     height: calc(100vh - 100px);
-    width: 100% ;
+    width: 300px ;
     background-color: #2f3e51;
     float: left;
+    clear:both;
     &__group {
       .g_name {
       padding: 20px 20px 5px 20px;
