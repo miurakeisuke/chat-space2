@@ -8,4 +8,5 @@
     - if message.body.present?
       %p.chat-main__content__message__word
         = message.body
+    = image_tag message.image, class: 'message__image' if message.image.present?
 
