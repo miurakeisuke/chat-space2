@@ -5,7 +5,8 @@
   .chat-top
     .chat-top__name
       = @group.name
-    %input.edit{type: "submit", value: "edit"}
+    .chat-top__edit
+      = link_to 'edit',edit_group_path(@group.id), method: :get
     .chat-top__member
       = @group.users.name
 
@@ -19,7 +20,5 @@
         = f.label :image, class: 'form__mask__image' do
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
-      / %label.chat-image
-      /   %i.fa.fa-image
+      = f.submit 'Send', class: 'submit'
       / %input.send-button{type: "submit", value: "send"}
