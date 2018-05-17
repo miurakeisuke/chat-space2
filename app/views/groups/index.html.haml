@@ -1,1 +1,19 @@
+.side
+  .side__data
+    .side__data__user
+      = current_user.name
+    %li.list
+    = link_to new_group_path do
+      %i.fa-edit
+    %li.list
+    = link_to edit_user_path(current_user) do
+      %i.fa-cogs
 
+  .side__bottom
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .side__bottom__group
+          %p.g_name
+            = group.name
+          .side__bottom__group-info
+            メッセージはまだありません。

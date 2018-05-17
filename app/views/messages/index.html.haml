@@ -1,39 +1,25 @@
-.header
-  .topic チャットグループが生成されました。
-
 .side
-  .side__data
-    .side__data__user
-      = current_user.name
-    %li.list
-    = link_to new_group_path do
-      %i.fa-edit
-    %li.list
-    = link_to edit_user_path(current_user) do
-      %i.fa-cogs
-
-  .side__bottom
-    - current_user.groups.each do |group|
-      = link_to group_messages_path(group) do
-        .side__bottom__group
-          %p.g_name
-            = group.name
-          .side__bottom__group-info
-            メッセージはまだありません。
+  = render partial: "side"
 
 .chat
   .chat-top
-    .chat-top__name sample-name
+    .chat-top__name
+      = @group.name
     %input.edit{type: "submit", value: "edit"}
-    %p.member MEMBER:sample
+    .chat-top__member
+      = @group.users.name
 
   .chat-main
-    - 4.times do
-      = render partial: "tweet"
+    = render partial: 'message', collection: @messages
 
-  .chat-footer
-    %form.chatbox__footer-form
-      %input.text{type: "text", placeholder: "type a message"}
-      %label.chat-image
-        %i.fa.fa-image
-      %input.send-button{type: "submit", value: "send"}
+  .chat-form
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+      / %label.chat-image
+      /   %i.fa.fa-image
+      / %input.send-button{type: "submit", value: "send"}
