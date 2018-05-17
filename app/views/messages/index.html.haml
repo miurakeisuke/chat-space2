@@ -8,7 +8,10 @@
     .chat-top__edit
       = link_to 'edit',edit_group_path(@group.id), method: :get
     .chat-top__member
-      = @group.users.name
+      %li
+        MEMBER:
+      %li
+        = current_user.name
 
   .chat-main
     = render partial: 'message', collection: @messages
