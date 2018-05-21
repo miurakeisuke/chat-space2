@@ -111,6 +111,7 @@
     width: calc(100vw - 300px);
     float: right;
     padding-top:26px;
+    overflow: scroll;
     &__content {
        min-height: 100px;
        margin: 20px 0;
