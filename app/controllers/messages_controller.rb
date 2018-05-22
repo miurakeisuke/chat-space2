@@ -9,17 +9,11 @@ class MessagesController < ApplicationController
 
   def create
     @message = @group.messages.new(message_params)
-    if @message.save
+    @message.save
       respond_to do |format|
-      format.html { group_messages_path(@group) }
+      format.html { redirect_to group_messages_path(@group) }
       format.json
       end
-    else
-      espond_to do |format|
-      format.html { group_messages_path(@group) }
-      format.json
-      end
-    end
   end
 
   private

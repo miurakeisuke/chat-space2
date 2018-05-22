@@ -13,7 +13,6 @@
     color: $w-color;
   }
 }
-
 .side {
   width: 300px;
   height: calc(100vh - 30px);
@@ -135,6 +134,10 @@
         clear: both;
         padding-left: 40px;
         .message__image {
+        height: 80px;
+        width: 80px;
+        }
+        .src {
         height: 80px;
         width: 80px;
         }
