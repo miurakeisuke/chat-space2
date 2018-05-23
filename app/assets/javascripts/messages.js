@@ -4,15 +4,16 @@ $(function(){
     if (message.image) {
     insertImage = `<img src="${message.image}" width="80px" height="80px">`;
     }
-  var html = `
-          <div class="chat-main__content">
-            <div class="chat-main__content__name">${message.name}</div>
-            <div class="chat-main__content__date">${message.date}</div>
-            <div class="chat-main__content__message">
-              <p class="chat-main__content__message__word">${message.body}</p>
-              <div class="message__image">${insertImage}
-            </div>
-          </div>`
+
+    var html = `
+      <div class="chat-main__content">
+        <div class="chat-main__content__name">${message.name}</div>
+        <div class="chat-main__content__date">${message.date}</div>
+        <div class="chat-main__content__message">
+          <p class="chat-main__content__message__word">${message.body}</p>
+          <div class="message__image">${message.image}</div>
+        </div>
+      </div>`;
 
     return html;
   }
@@ -20,7 +21,7 @@ $(function(){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action')
+    var url = $(this).attr('action');
     $.ajax({
       url: url,
       type: "POST",
