@@ -17,15 +17,12 @@ $(function(){
     return html;
   }
 
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    // var message = $('#new_message').val();
-    // if(message == ''){
-    // alert("文を入力してください。");
-    // return false;
-    // }
     var formData = new FormData(this);
     var url = $(this).attr('action')
+    var array = [];
     $.ajax({
       url: url,
       type: "POST",
@@ -36,15 +33,19 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
+      console.log(array)
+      array.unshift('chat-main__content');
       $('.chat-main').append(html)
       $('#new_message')[0].reset();
-      $('.submit').removeAttr('disabled');
+      console.log(array[0])
       $('.chat-main').animate({
-        scrollTop: $(".chat-main__content:last").offset().top
+        // scrollTop: $(".chat-main__content:last").offset().top
+        scrollTop: $(array)[0].offset().top
       });
     })
     .fail(function(){
       alert('error');
     })
+    return false;
   })
 });
