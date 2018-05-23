@@ -1,8 +1,8 @@
 $(function(){
   function buildHTML(message){
   var insertImage = '';
-    if (message.image.url) {
-    insertImage = `<img src="${message.image.url}" width="80px" height="80px">`;
+    if (message.image) {
+    insertImage = `<img src="${message.image}" width="80px" height="80px">`;
     }
   var html = `
           <div class="chat-main__content">
