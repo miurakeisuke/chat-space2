@@ -32,7 +32,7 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.chat-main').append(html)
+      $('.chat-main').append(html);
       $('#new_message')[0].reset();
       $('.chat-main').animate({scrollTop: $('.chat-main')[0].scrollHeight}, 500);
     })
