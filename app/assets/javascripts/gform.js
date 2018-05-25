@@ -31,14 +31,7 @@ $(function() {
 
   }
 
-
-
   $("#user-search-field").on("keyup", function(e) {
-    $("[with='alphanum']")
-        .off(".inputcontrol.alphanum")
-        .on("keyup.inputcontrol.alphanum", function(){
-            $(this).val($(this).val().replace(/[^0-9a-zA-Z]/g,""));
-    })
     e.preventDefault();
     var input = $("#user-search-field").val();
     $.ajax({
