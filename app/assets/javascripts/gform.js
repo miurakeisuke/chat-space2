@@ -60,13 +60,11 @@ $(function() {
     var name = $(this).data('user-name')
     var id = $(this).data('user-id')
     memberUser(id, name);
-    var me = $(this),
-    eda = me.closest('div')
-    eda.remove();
+    var choice = $(this).closest('div')
+    choice.remove();
   });
   $(document).on('click', '.user-search-remove', function(){
-     var me = $(this),
-     eda = me.closest('div')
-     eda.remove();
+     var choice = $(this).closest('div')
+     choice.remove();
   });
 });

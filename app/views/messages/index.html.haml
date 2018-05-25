@@ -10,8 +10,9 @@
     .chat-top__member
       %li
         MEMBER:
-      %li
-        = current_user.name
+      - @group.users.each do |user|
+        %li
+          = user.name
 
   .chat-main
     = render partial: 'message', collection: @messages
