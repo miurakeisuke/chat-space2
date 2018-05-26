@@ -1,4 +1,7 @@
 $(function(){
+  function scrollNew() {
+    scrollTop: $('.chat-main')[0].scrollHeight}, 500);
+  }
   function buildHTML(message){
   var insertImage = '';
     if (message.image) {
@@ -74,23 +77,15 @@ $(function(){
     })
     .done(function(new_messages){
       var insertHTML = '';
-      console.log(new_messages)
       new_messages.forEach(function(message) {
         insertHTML += buildMESSAGE(message);
         console.log(insertHTML)
       });
       $('.chat-main').append(insertHTML);
-      $('.chat-main').animate({scrollTop: $('.chat-main')[0].scrollHeight}, 500);
+      $('.chat-main').animate(scrollNEw);
     })
     .fail(function(message) {
       alert('自動更新に失敗しました');
     });
   }
 });
-
-
-
-
-
-
-

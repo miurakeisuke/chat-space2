@@ -5,5 +5,3 @@ json.array! @new_messages.each do |new_message|
   json.image    new_message.image.url
   json.id       new_message.id
 end
-
-
