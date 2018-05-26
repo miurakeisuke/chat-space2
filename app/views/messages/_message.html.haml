@@ -1,8 +1,8 @@
-.chat-main__content
+.chat-main__content{ "data-message-id": message.id }
   .chat-main__content__name
     = message.user.name
   .chat-main__content__date
-    = message.created_at
+    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .chat-main__content__message
     - if message.body.present?
       %p.chat-main__content__message__word
