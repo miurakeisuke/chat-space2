@@ -6,12 +6,12 @@ $(function(){
     }
 
     var html = `
-      <div class="chat-main__content">
+      <div class="chat-main__content" data-message-id="${message.id}">
         <div class="chat-main__content__name">${message.name}</div>
         <div class="chat-main__content__date">${message.date}</div>
         <div class="chat-main__content__message">
           <p class="chat-main__content__message__word">${message.body}</p>
-          <div class="message__image">${message.image}</div>
+          <div class="message__image">${insertImage}</div>
         </div>
       </div>`;
 
@@ -41,4 +41,56 @@ $(function(){
     })
     return false;
   })
+
+  function buildMESSAGE(new_message) {
+    var insertImage = '';
+    if (new_message.image) {
+    insertImage = `<img src="${new_message.image}" width="80px" height="80px">`;
+    }
+
+    var html = `
+      <div class="chat-main__content" data-message-id="${new_message.id}">
+        <div class="chat-main__content__name">${new_message.name}</div>
+        <div class="chat-main__content__date">${new_message.date}</div>
+        <div class="chat-main__content__message">
+          <p class="chat-main__content__message__word">${new_message.body}</p>
+          <div class="message__image">${insertImage}</div>
+        </div>
+      </div>`;
+
+    return html;
+  }
+
+  $(function(){
+    setInterval(update, 5000);
+  });
+  function update(){
+    var message_id = $('.chat-main__content:last').data('message-id');
+    $.ajax({
+      type: 'GET',
+      url: location.href,
+      data: { id: message_id },
+      dataType: 'json',
+    })
+    .done(function(new_messages){
+      var insertHTML = '';
+      console.log(new_messages)
+      new_messages.forEach(function(message) {
+        insertHTML += buildMESSAGE(message);
+        console.log(insertHTML)
+      });
+      $('.chat-main').append(insertHTML);
+      $('.chat-main').animate({scrollTop: $('.chat-main')[0].scrollHeight}, 500);
+    })
+    .fail(function(message) {
+      alert('自動更新に失敗しました');
+    });
+  }
 });
+
+
+
+
+
+
+
