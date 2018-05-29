@@ -61,11 +61,13 @@ $(function(){
         </div>
       </div>`;
 
-    return html;
+    return html
   }
 
   $(function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(update, 5000);
+    }
   });
   function update(){
     var message_id = $('.chat-main__content:last').data('message-id');
