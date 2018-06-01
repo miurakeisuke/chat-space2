@@ -2,10 +2,6 @@
 lock "~> 3.10.2"
 
 set :application, "chat-space2"
-set :repo_url, "git@example.com:me/my_repo.git"
-
-server '52.199.43.116', user: 'ec2-user', roles: %w{app db web}
-
 set :repo_url,  'git@github.com:miurakeisuke/chat-space2.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
