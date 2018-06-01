@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.2"
 
-set :application, "my_app_name"
+set :application, "chat-space2"
 set :repo_url, "git@example.com:me/my_repo.git"
 
 server '52.199.43.116', user: 'ec2-user', roles: %w{app db web}
@@ -14,7 +14,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['.ssh/clear_fireworks_lapislazuli.pem']
+                  keys: ['~/.ssh/clear_fireworks_lapislazuli.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
