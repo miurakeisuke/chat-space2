@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: b-lotus_keinez_tsk
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /tmp/mysql.sock
 
 development:
