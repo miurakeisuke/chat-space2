@@ -65,6 +65,8 @@ gem 'mini_magick'
 
 gem 'pry-rails'
 
+gem 'fog'
+
 group :production do
   gem 'unicorn'
 end
